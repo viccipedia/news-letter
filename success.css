@@ -76,6 +76,19 @@ a.button:hover {
 .input .email:hover {
   color: black;
 }
+.error-content{
+  display: flex;
+  justify-content: space-between;
+}
+.error{
+  color: red;
+  margin-right: 5px;
+}
+.error-input {
+  color: red;
+  border: 2px solid red;
+  background-color: rgb(250, 183, 183);
+}
 @media (min-width: 430px) {
   .image img:nth-child(2) {
     width: 100%;
@@ -102,34 +115,4 @@ a.button:hover {
     justify-content: center;
     align-items: center;
   }
-}
-/* .input {
-  text-align: left;
-  direction: rtl;
-}
-input::placeholder{
-  text-align: left;
-} */
-.email::placeholder {
-  text-align: left; /* Adjust the value as needed */
-  direction: rtl;
-}
-.input p{
-  text-align: right;
-  margin-right: 7.8rem;
-  font-size: 0.8rem;
-}
-.email:invalid {
-  color:  rgb(249, 75, 101);
-  background-color: rgb(245, 207, 213);
-  border: 1px solid rgb(249, 75, 101);
-border-color: 1px solid rgb(249, 75, 101);
-}
-/* .email:hover{
-  border: 1px solid rgb(249, 75, 101);
-border-color: 1px solid rgb(249, 75, 101);
-} */
-.email{
-cursor: pointer;
-padding: 1px solid rgb(249, 75, 101);
 }

@@ -4,25 +4,49 @@
 // id an empty paragraph for the error message
 console.log('favour is very silly and naughty!!!');
 
-const inputElement = document.getElementById('myInput');
-    const validationMessage = document.getElementById('validationMessage');
+const input = document.querySelector('.email');
+const err = document.getElementById('error');
+const btn = document.getElementById('btn');
+const placeholder = input.getAttribute('placeholder');
 
-    inputElement.addEventListener('input', function() {
-      const email = inputElement.value;
-      if (isValidEmail(email)) {
-        validationMessage.textContent = '';
-        validationMessage.style.color = 'green';
-      } else {
-        validationMessage.textContent = 'Valid email required.';
-        validationMessage.style.color = 'red';
-      }
-    });
+function handleSubmit(e) {
+  e.preventDefault();
+  const email = input.value.trim();
 
-    function isValidEmail(email) {
-      // Regular expression for basic email validation
-      const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      return regex.test(email);
-    }
+
+  // Check if the email field is empty e.g if(email.length = < 0)
+  // Regular expression for email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email === '') {
+    err.textContent = 'Valid email required.';
+    input.classList.add('error-input');
+    err.classList.add('error');
+    reset(2000);
+    return; // Prevent further processing
+  } else if (emailRegex.test(email)) {
+    // Email is valid, remove error message and allow form submission
+    err.textContent = '';
+    input.classList.remove('error');
+    // Redirect to success.html (You can change this URL as needed)
+    window.location.href = 'successpage.html';
+  } else {
+    // Email is not valid, display error message and style the input as red
+    err.textContent = 'Enter a valid email address.';
+    input.classList.add('error-input');
+    err.classList.add('error');
+    reset(8000);
+  }
+}
+function reset(time){
+    setTimeout(()=>{
+        err.textContent = '';
+        input.classList.remove('error-input');
+        err.classList.remove('error');
+        input.value = '';
+        }, time)
+}
+ 
+btn.addEventListener('click', handleSubmit);
 
 // // Get the input element
 // const emailInput = document.querySelector('.email');
