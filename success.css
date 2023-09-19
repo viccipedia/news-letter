@@ -103,3 +103,33 @@ a.button:hover {
     align-items: center;
   }
 }
+/* .input {
+  text-align: left;
+  direction: rtl;
+}
+input::placeholder{
+  text-align: left;
+} */
+.email::placeholder {
+  text-align: left; /* Adjust the value as needed */
+  direction: rtl;
+}
+.input p{
+  text-align: right;
+  margin-right: 7.8rem;
+  font-size: 0.8rem;
+}
+.email:invalid {
+  color:  rgb(249, 75, 101);
+  background-color: rgb(245, 207, 213);
+  border: 1px solid rgb(249, 75, 101);
+border-color: 1px solid rgb(249, 75, 101);
+}
+/* .email:hover{
+  border: 1px solid rgb(249, 75, 101);
+border-color: 1px solid rgb(249, 75, 101);
+} */
+.email{
+cursor: pointer;
+padding: 1px solid rgb(249, 75, 101);
+}
