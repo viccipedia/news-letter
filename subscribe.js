@@ -28,7 +28,7 @@ function handleSubmit(e) {
     err.textContent = '';
     input.classList.remove('error');
     // Redirect to success.html (You can change this URL as needed)
-    window.location.href = 'successpage.html';
+    window.location.href = 'success.html';
   } else {
     // Email is not valid, display error message and style the input as red
     err.textContent = 'Enter a valid email address.';
